@@ -8,6 +8,14 @@ public class TestVectorAngle : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log(Vector3.SignedAngle(Vector3.right, TestVec, Vector3.forward));
+        Debug.Log(DirToHitDir(TestVec));
+    }
+
+    private int DirToHitDir(Vector3 dir)
+    {
+        var angle = Vector3.SignedAngle(dir, Vector3.right, -Vector3.forward);
+        Debug.Log(angle);
+        angle = angle > 0f ? angle : angle + 360f;
+        return ((int)(angle + 22.5f) / 45) % 8;
     }
 }
