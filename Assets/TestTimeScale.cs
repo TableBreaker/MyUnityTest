@@ -6,13 +6,13 @@ public class TestTimeScale : MonoBehaviour
 {
     private void Start()
     {
-        Time.timeScale = 0.01f;
+        Time.timeScale = 0.1f;
     }
 
     private void Update()
     {
-//         Debug.Log(Time.deltaTime);
-//         Debug.Log("Update");
+        Debug.Log(Time.deltaTime);
+        Debug.Log("Update");
     }
 
     private void FixedUpdate()

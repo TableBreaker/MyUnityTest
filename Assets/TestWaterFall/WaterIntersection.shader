@@ -51,7 +51,7 @@
 			{
 				v2f o;
 				o.vertex = UnityObjectToClipPos(v.vertex);
-				o.vertex.y += 0.5 * sin(o.vertex.x * 5 + _Time.y);
+				//o.vertex.y += 0.5 * sin(o.vertex.x * 5 + _Time.y);
 
 				o.scrPos = ComputeScreenPos(o.vertex);
 				o.displUV = TRANSFORM_TEX(v.uv, _DisplGuide);

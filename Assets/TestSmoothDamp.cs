@@ -6,9 +6,12 @@ public class TestSmoothDamp : MonoBehaviour
 {
     private void Update()
     {
-        _current = SmoothDamp(_current, -10, ref _velocity, 1f, 10f, Time.deltaTime);
-        transform.position = new Vector3(_current, 0f, 0f);
-        Debug.Log(_velocity);
+        if (Input.GetKey(KeyCode.Space))
+        {
+            _current = SmoothDamp(_current, 10, ref _velocity, 1f, 10f, Time.deltaTime);
+            transform.position = new Vector3(_current, 0f, 0f);
+            Debug.Log(_velocity);
+        }
     }
 
     public float SmoothDamp(float current, float target, ref float currentVelocity, float smoothTime, float maxSpeed, float deltaTime)
@@ -33,6 +36,6 @@ public class TestSmoothDamp : MonoBehaviour
         return num8;
     }
 
-    private float _current;
-    private float _velocity;
+    public float _current;
+    public float _velocity;
 }
